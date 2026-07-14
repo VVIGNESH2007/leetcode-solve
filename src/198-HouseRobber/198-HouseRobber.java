@@ -1,0 +1,14 @@
+// Last updated: 7/14/2026, 12:16:03 PM
+class Solution {
+    public int rob(int[] nums) {
+        int rob = 0;
+        int norob = 0;
+        for (int i = 0; i < nums.length; i ++) {
+            int newRob = norob + nums[i];
+            int newNoRob = Math.max(norob, rob);
+            rob = newRob;
+            norob = newNoRob;
+        }
+        return Math.max(rob, norob);
+    }
+}
