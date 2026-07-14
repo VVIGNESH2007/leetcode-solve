@@ -1,0 +1,19 @@
+// Last updated: 7/14/2026, 12:15:25 PM
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        int i=0;
+        int j=0;
+        while(j<t.length()){
+            if(i==s.length()){
+                return true;
+            }
+            if(s.charAt(i)==t.charAt(j)){
+                i++;
+                j++;
+            }else{
+                j++;
+            }
+        }
+        return i==s.length();
+    }
+}
